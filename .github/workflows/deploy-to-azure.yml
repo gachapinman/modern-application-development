@@ -36,7 +36,4 @@ jobs:
 
         - name: Build and Push Docker image to registry
           run: |
-              az acr build
-                --registry ${{ secrets.ACR_SERVER }} 
-                --image ${{ secrets.ACR_REPOSITORY }}:${{ github.sha }}
-                ./app 
+              az acr build --registry ${{ secrets.ACR_SERVER }} --image ${{ secrets.ACR_REPOSITORY }}:${{ github.sha }} ./app 
