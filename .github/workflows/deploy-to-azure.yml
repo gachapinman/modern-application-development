@@ -9,7 +9,7 @@ permissions:
 
 jobs:
     # login:
-      build
+      build:
         runs-on: ubuntu-latest
 
         steps:
