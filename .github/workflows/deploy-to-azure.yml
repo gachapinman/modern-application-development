@@ -30,12 +30,12 @@ jobs:
         #     inlineScript: |
         #         az account show
 
-         - name: Login to ACR
-           run: |
+        - name: Login to ACR
+          run: |
               az acr login --name ${{ secrets.ACR_SERVER }}
 
-          - name: Build and Push Docker image to registory
-            run: |
+        - name: Build and Push Docker image to registory
+          run: |
               az acr build
                 --registry ${{ secrets.ACR_SERVER }} 
                 --image ${{ secrets.ACR_REPOSITORY }}:${{ github.sha }}
